@@ -1,6 +1,6 @@
-import { NativeModulesProxy } from "expo-modules-core";
+import { requireNativeModule } from "expo-modules-core";
 
-export default NativeModulesProxy.ExpoShazamKit || {
+export default requireNativeModule('ExpoShazamKit') || {
   isAvailable(): boolean {
     return false;
   },
