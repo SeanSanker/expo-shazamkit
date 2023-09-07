@@ -431,7 +431,7 @@ PODS:
   - SDWebImageWebPCoder (0.9.1):
     - libwebp (~> 1.0)
     - SDWebImage/Core (~> 5.13)
-  - ShazamKitModule (0.1.0):
+  - ShazamKitModule (0.1.2):
     - ExpoModulesCore
   - Yoga (1.14.0)
 
@@ -643,9 +643,9 @@ SPEC CHECKSUMS:
   SDWebImageAVIFCoder: d759e21cf4efb640cc97250566aa556ad8bb877c
   SDWebImageSVGCoder: 6fc109f9c2a82ab44510fff410b88b1a6c271ee8
   SDWebImageWebPCoder: 18503de6621dd2c420d680e33d46bf8e1d5169b0
-  ShazamKitModule: 35af045297f9912481d0ba72a593c7e542589fc5
+  ShazamKitModule: 4f6230a402d6d5417862108ea2a0362efaa1a822
   Yoga: ba09b6b11e6139e3df8229238aa794205ca6a02a
 
 PODFILE CHECKSUM: b45c4f0c0f91ad3a2b5e75f43d001f35b06ba609
 
-COCOAPODS: 1.11.2
+COCOAPODS: 1.11.3
