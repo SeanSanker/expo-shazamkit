@@ -1,8 +1,8 @@
 import ExpoShazamKit from "./ExpoShazamKit";
 import { MatchedItem } from "./ExpoShazamKit.types";
 
-export async function isAvailable(): Promise<boolean> {
-  return await ExpoShazamKit.isAvailable();
+export function isAvailable(): boolean {
+  return ExpoShazamKit.isAvailable();
 }
 
 export async function startListening(): Promise<MatchedItem[]> {

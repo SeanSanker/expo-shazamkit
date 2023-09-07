@@ -19,7 +19,7 @@ function useIsAvailable() {
 
   useEffect(() => {
     const interval = setInterval(async () => {
-      const isAvailable = await ExpoShazamKit.isAvailable();
+      const isAvailable = ExpoShazamKit.isAvailable();
       setAvailable(isAvailable);
     }, 1000);
 
