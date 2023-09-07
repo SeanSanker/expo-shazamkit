@@ -2,7 +2,7 @@ import * as Linking from "expo-linking";
 import * as ExpoShazamKit from "expo-shazamkit";
 import { MatchedItem } from "expo-shazamkit";
 import { MotiView } from "moti";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import {
   ActivityIndicator,
   Alert,
@@ -14,9 +14,28 @@ import {
   View,
 } from "react-native";
 
+function useIsAvailable() {
+  const [available, setAvailable] = useState(false);
+
+  useEffect(() => {
+    const interval = setInterval(async () => {
+      const isAvailable = await ExpoShazamKit.isAvailable();
+      setAvailable(isAvailable);
+    }, 1000);
+
+    return () => {
+      clearInterval(interval);
+    };
+  }, []);
+
+  return available;
+}
+
 export default function App() {
   const [searching, setSearching] = useState(false);
   const [song, setSong] = useState<MatchedItem | null>(null);
+
+  const available = useIsAvailable();
 
   const startListening = async () => {
     try {
@@ -50,6 +69,7 @@ export default function App() {
   return (
     <View style={styles.container}>
       <View style={{ flex: 1, justifyContent: "center", gap: 10 }}>
+        {<Text>{JSON.stringify(available, null, 2)}</Text>}
         {song && (
           <MotiView
             from={{ opacity: 0, scale: 0 }}
